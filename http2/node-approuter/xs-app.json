@@ -1,0 +1,11 @@
+{
+  "welcomeFile": "index.html",
+  "authenticationMethod": "none",
+  "routes": [
+    {
+      "source": "^/(.*)$",
+      "target": "/web/$1",
+      "localDir": "static-content"
+    }
+  ]
+}

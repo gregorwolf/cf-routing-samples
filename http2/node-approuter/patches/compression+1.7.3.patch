@@ -1,0 +1,16 @@
+diff --git a/node_modules/compression/index.js b/node_modules/compression/index.js
+index f190c68..cb19a31 100644
+--- a/node_modules/compression/index.js
++++ b/node_modules/compression/index.js
+@@ -80,9 +80,11 @@ function compression (options) {
+         return false
+       }
+ 
++      /*
+       if (!this._header) {
+         this._implicitHeader()
+       }
++      */
+ 
+       return stream
+         ? stream.write(Buffer.from(chunk, encoding))

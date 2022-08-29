@@ -1,0 +1,22 @@
+diff --git a/node_modules/@sap/approuter/lib/server.js b/node_modules/@sap/approuter/lib/server.js
+index 86f3ee4..8a60ff9 100644
+--- a/node_modules/@sap/approuter/lib/server.js
++++ b/node_modules/@sap/approuter/lib/server.js
+@@ -2,6 +2,8 @@
+ 
+ const http = require('http');
+ const https = require('https');
++const http2 = require('http2');
++
+ const WsProxy = require('./websockets/WsProxy');
+ const util = require('util');
+ 
+@@ -29,7 +31,7 @@ exports.start = function (app, callback) {
+   if (routerConfig.httpsOptions) {
+     server = https.createServer(routerConfig.httpsOptions, app);
+   } else {
+-    server = http.createServer(app);
++    server = http2.createServer(app);
+   }
+   if (routerConfig.incomingConnectionTimeout !== undefined) {
+     server.timeout = routerConfig.incomingConnectionTimeout;
